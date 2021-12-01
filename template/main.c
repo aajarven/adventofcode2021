@@ -10,7 +10,10 @@ int main(int argc, char **argv){
 		exit(EXIT_FAILURE);
 	}
 
-	int* data = read_int_array(argv[1]);
+	char* input_file = argv[1];
+
+	int len_data = count_lines(input_file);
+	int* data = read_int_array(input_file);
 
 	// do something
 
