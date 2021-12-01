@@ -17,6 +17,9 @@ int main(int argc, char **argv){
 	printf("There are %d measurements larger than the previous one\n",
 		   increases(data, len_data));
 
+	printf("There are %d three-measurement windows deeper than the previous one\n",
+		   windowed_increases(data, len_data));
+
 	free(data);
 	exit(EXIT_SUCCESS);
 }
