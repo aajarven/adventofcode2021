@@ -36,3 +36,20 @@ int count_lines(char* filename){
 	fclose(fp);
 	return len;
 }
+
+/*
+ * Read a the lines from a text file into a 2D char array.
+ */
+char* read_lines(char* filename, int max_line_length){
+
+	int len = count_lines(filename);
+	char* arr = malloc(len * max_line_length * sizeof(char));
+
+	FILE *fp = fopen(filename, "r");
+
+	int line=0;
+	while(fgets(&arr[line * max_line_length], max_line_length, fp) != NULL && ++line < len){
+	}
+	fclose(fp);
+	return arr;
+}
