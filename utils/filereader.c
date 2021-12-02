@@ -29,8 +29,9 @@ int count_lines(char* filename){
 	FILE *fp = fopen(filename, "r");
 	int len = 0;
 	while(!feof(fp)){
-		fscanf(fp, "%*s\n");
-		len++;
+		if (fgetc(fp) == '\n') {
+			len++;
+		}
 	}
 	fclose(fp);
 	return len;
