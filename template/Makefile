@@ -5,7 +5,7 @@ run: main
 	bin/main data/input.txt
 
 example: main
-       bin/main data/example.txt
+	bin/main data/example.txt
 
 valgrind: main
 	valgrind bin/main data/input.txt
