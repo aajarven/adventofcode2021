@@ -4,6 +4,7 @@ Advent of code: day XX
 
 import click
 
+
 @click.command()
 @click.argument("input_file", type=click.File("r"))
 def solve(input_file):
