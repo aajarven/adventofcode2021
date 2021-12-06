@@ -61,3 +61,27 @@ int* char_array_to_digits(char* arr, int n_rows, int data_row_length, int extra_
 	}
 	return digits;
 }
+
+
+int sum(int* arr, int len) {
+    /**
+     * Return the sum of the integers in the given array.
+     */
+    int sum = 0;
+    for (int i=0; i<len; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+
+long long longlong_sum(long long* arr, int len) {
+    /**
+     * Return the sum of the long long integers in the given array.
+     */
+    long long sum = 0;
+    for (int i=0; i<len; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
