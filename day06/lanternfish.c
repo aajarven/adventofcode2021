@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include"lanternfish.h"
-#include"../utils/arrayutils.h"
+#include"../c-utils/arrayutils.h"
 
 long long* parse_countdown(int* initial_states, int len_states) {
     long long* countdowns = malloc(9 * sizeof(long long));

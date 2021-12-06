@@ -12,17 +12,17 @@ valgrind: main
 
 all: main
 
-main: main.o depth.o ../utils/filereader.o bin
-	$(CC) $(CFLAGS) -o bin/main main.o depth.o ../utils/filereader.o
+main: main.o depth.o ../c-utils/filereader.o bin
+	$(CC) $(CFLAGS) -o bin/main main.o depth.o ../c-utils/filereader.o
 
-main.o: main.c main.h ../utils/filereader.o
+main.o: main.c main.h ../c-utils/filereader.o
 	$(CC) $(CFLAGS) -c main.c
 
 depth.o: depth.c depth.h
 	$(CC) $(CFLAGS) -c depth.c
 
-../utils/filereader.o:  ../utils/filereader.c ../utils/filereader.h
-	$(CC) $(CFLAGS) -c ../utils/filereader.c -o ../utils/filereader.o
+../c-utils/filereader.o:  ../c-utils/filereader.c ../c-utils/filereader.h
+	$(CC) $(CFLAGS) -c ../c-utils/filereader.c -o ../c-utils/filereader.o
 
 bin:
 	mkdir -p bin

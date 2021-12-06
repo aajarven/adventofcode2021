@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"power.h"
-#include"../utils/arrayutils.h"
-#include"../utils/filereader.h"
+#include"../c-utils/arrayutils.h"
+#include"../c-utils/filereader.h"
 
 int main(int argc, char **argv){
 	if (argc < 3) {

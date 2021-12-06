@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
-#include"../utils/arrayutils.h"
+#include"../c-utils/arrayutils.h"
 
 int to_decimal(int* binary_array, int n_bits);
 int* char_to_binary(char* char_array, int n_bits);
