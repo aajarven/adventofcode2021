@@ -53,3 +53,28 @@ char* read_lines(char* filename, int max_line_length){
 	fclose(fp);
 	return arr;
 }
+
+/*
+ * Read a file containing a single row of integers into an array.
+ */
+int* read_row_of_ints(char* filename, char separator, int max_ints) {
+	FILE *fp = fopen(filename, "r");
+
+    char format[] = "%d";
+    strncat(format, &separator, 1);
+
+    int* arr = malloc(max_ints * sizeof(int));
+    int current_index = -1;
+
+    // read the integers
+    while(!feof(fp)) {
+        fscanf(fp, format, &arr[++current_index]);
+    }
+
+    // fill the rest of the array with -1 to signify the end of input
+    while (current_index < max_ints) {
+        arr[current_index++] = -1;
+    }
+
+    return arr;
+}
