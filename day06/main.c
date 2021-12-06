@@ -16,15 +16,10 @@ int main(int argc, char **argv){
 
 	int* data = read_row_of_ints(input_file, ',', 500);
     long long* countdowns = parse_countdown(data, 500);
-    printf("Initial fish:\n");
-    //print_int_array(countdowns, 9);
-    //printf("initial fish count: %d\n", sum(countdowns, 9));
     printf("Number of fish after 80 days: %lld\n",
             count_after_n_days(countdowns, 80));
     printf("Number of fish after 256 days: %lld\n",
             count_after_n_days(countdowns, 256-80));
-    //printf("State after 256 days:\n");
-    //print_int_array(countdowns, 9);
 
 	free(data);
 	exit(EXIT_SUCCESS);
