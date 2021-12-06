@@ -21,6 +21,7 @@ int main(int argc, char **argv){
     printf("Number of fish after 256 days: %lld\n",
             count_after_n_days(countdowns, 256-80));
 
+    free(countdowns);
 	free(data);
 	exit(EXIT_SUCCESS);
 }

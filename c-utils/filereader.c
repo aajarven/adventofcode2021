@@ -76,5 +76,6 @@ int* read_row_of_ints(char* filename, char separator, int max_ints) {
         arr[current_index++] = -1;
     }
 
+	fclose(fp);
     return arr;
 }
