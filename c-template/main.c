@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"../utils/filereader.h"
+#include"../c-utils/filereader.h"
 
 int main(int argc, char **argv){
 	if (argc < 2) {
