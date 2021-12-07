@@ -3,12 +3,12 @@
 #include"lanternfish.h"
 #include"../c-utils/arrayutils.h"
 
-long long* parse_countdown(int* initial_states, int len_states) {
-    long long* countdowns = malloc(9 * sizeof(long long));
-    memset(countdowns, 0, 9*sizeof(long long));
+long* parse_countdown(int* initial_states, int len_states) {
+    long* countdowns = malloc(9 * sizeof(long));
+    memset(countdowns, 0, 9*sizeof(long));
 
     for (int i=0; i<len_states; i++) {
-        long long current_state = initial_states[i];
+        long current_state = initial_states[i];
         if (current_state != -1) {
             countdowns[current_state] = countdowns[current_state] + 1;
         }
@@ -16,16 +16,16 @@ long long* parse_countdown(int* initial_states, int len_states) {
     return countdowns;
 }
 
-long long count_after_n_days(long long* countdowns, int days) {
+long count_after_n_days(long* countdowns, int days) {
     int day = 0;
     while (day++<days) {
         advance_day(countdowns);
     }
-    return longlong_sum(countdowns, 9);
+    return long_sum(countdowns, 9);
 }
 
-void advance_day(long long* countdowns) {
-    long long new_fish = countdowns[0];
+void advance_day(long* countdowns) {
+    long new_fish = countdowns[0];
 
     // handle fish that do not make babies
     for (int i=0; i<8; i++) {

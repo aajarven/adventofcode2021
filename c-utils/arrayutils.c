@@ -75,11 +75,11 @@ int sum(int* arr, int len) {
 }
 
 
-long long longlong_sum(long long* arr, int len) {
+long long_sum(long* arr, int len) {
     /**
-     * Return the sum of the long long integers in the given array.
+     * Return the sum of the long integers in the given array.
      */
-    long long sum = 0;
+    long sum = 0;
     for (int i=0; i<len; i++) {
         sum += arr[i];
     }
