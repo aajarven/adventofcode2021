@@ -85,3 +85,51 @@ long long_sum(long* arr, int len) {
     }
     return sum;
 }
+
+int count_number_frequency(int* arr, int counted_number, int n_elements) {
+	/**
+	 * Return the number of times a given number is found in the given array.
+	 */
+	int count = 0;
+	for (int i=0; i<n_elements; i++) {
+		if (arr[i] == counted_number) {
+			count++;
+		}
+	}
+	return count;
+
+}
+
+void quicksort(int* arr, int len) {
+	/**
+	 * Sort given array in place
+	 */
+	if (len < 2) {
+		return;
+	}
+
+	int pivot = arr[len/2];
+
+	int start = 0;
+	int end = len - 1;
+	while (start < end) {
+		while (arr[start] < pivot) {
+			start++;
+		}
+		while (arr[end] > pivot) {
+			end--;
+		}
+
+		if (start < end) {
+			int tmp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = tmp;
+
+			start++;
+			end--;
+		}
+	}
+
+	quicksort(arr, start);
+	quicksort(arr + start, len - start);
+}

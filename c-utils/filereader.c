@@ -79,3 +79,31 @@ int* read_row_of_ints(char* filename, char separator, int max_ints) {
 	fclose(fp);
     return arr;
 }
+
+
+/*
+ * Read an array of digits into an int array
+ */
+int* read_digit_array(char* filename, int width, int height) {
+	int* arr = malloc(width * height * sizeof(int));
+	FILE *fp = fopen(filename, "r");
+
+	char next_digit;
+	int row = 0;
+	int column = 0;
+
+	while ( (next_digit = getc(fp)) != EOF) {
+		if (next_digit != '\n') {
+			arr[row*width + column] = (int) next_digit - '0';
+
+			column++;
+			if (column >= width) {
+				row++;
+				column = 0;
+			}
+		}
+	}
+
+	fclose(fp);
+	return arr;
+}

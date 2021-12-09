@@ -5,3 +5,5 @@ void print_2d_int_array(int* arr, int n_rows, int row_length);
 int* char_array_to_digits(char* arr, int n_rows, int data_row_length, int extra_chars);
 int sum(int* arr, int len);
 long long_sum(long* arr, int len);
+int count_number_frequency(int* arr, int counted_number, int n_elements);
+void quicksort(int* arr, int len);
