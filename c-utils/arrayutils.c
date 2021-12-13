@@ -133,3 +133,37 @@ void quicksort(int* arr, int len) {
 	quicksort(arr, start);
 	quicksort(arr + start, len - start);
 }
+
+void quicksort_long(long* arr, int len) {
+	/**
+	 * Sort given array in place
+	 */
+	if (len < 2) {
+		return;
+	}
+
+	long pivot = arr[len/2];
+
+	long start = 0;
+	long end = len - 1;
+	while (start < end) {
+		while (arr[start] < pivot) {
+			start++;
+		}
+		while (arr[end] > pivot) {
+			end--;
+		}
+
+		if (start < end) {
+			long tmp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = tmp;
+
+			start++;
+			end--;
+		}
+	}
+
+	quicksort_long(arr, start);
+	quicksort_long(arr + start, len - start);
+}

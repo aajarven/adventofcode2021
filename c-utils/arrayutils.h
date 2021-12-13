@@ -7,3 +7,4 @@ int sum(int* arr, int len);
 long long_sum(long* arr, int len);
 int count_number_frequency(int* arr, int counted_number, int n_elements);
 void quicksort(int* arr, int len);
+void quicksort_long(long* arr, int len);
